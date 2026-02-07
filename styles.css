@@ -31,40 +31,27 @@
 /* 31 */   0% { transform: translateX(0); }
 /* 32 */   100% { transform: translateX(calc(-400px * 6 - 120px)); } /* 滚动 6 张图的距离 */
 /* 33 */ }
-/* 125 */ /* --- 手机端导航消失故障定向修复 --- */
+/* 125 */ /* --- 全站手机端最终修正版 --- */
 /* 126 */ @media (max-width: 768px) {
-/* 127 */   /* 1. 强制重置页头高度，允许内容撑开 */
-/* 128 */   header { 
+/* 127 */   header { 
+/* 128 */     display: flex !important; 
 /* 129 */     flex-direction: column !important; 
 /* 130 */     height: auto !important; 
-/* 131 */     padding: 10px 0 !important; 
-/* 132 */     min-height: 120px; 
+/* 131 */     padding: 15px 0 !important; 
+/* 132 */     background-color: #222 !important; /* 深黑色背景更显专业 */
 /* 133 */   }
-/* 134 */ 
-/* 135 */   /* 2. 缩小 LOGO 图片尺寸，防止遮挡 */
-/* 136 */   .logo img { 
-/* 137 */     height: 40px !important; /* 电脑端是60px，手机端降到40px */
-/* 138 */     width: auto; 
-/* 139 */   }
-/* 140 */ 
-/* 141 */   /* 3. 优化导航列表，确保文字可见并居中 */
-/* 142 */   nav ul { 
-/* 143 */     display: flex !important;
-/* 144 */     flex-wrap: wrap !important; 
-/* 145 */     justify-content: center !important; 
-/* 146 */     gap: 8px !important; 
-/* 147 */     margin: 10px 0 !important;
-/* 148 */     padding: 0 5px !important;
-/* 149 */   }
-/* 150 */ 
-/* 151 */   /* 4. 调整导航字体大小，适应小屏幕 */
-/* 152 */   nav ul li a { 
-/* 153 */     font-size: 14px !important; 
-/* 154 */     padding: 5px 8px !important; 
-/* 155 */   }
-/* 156 */ 
-/* 157 */   /* 5. 修复栅格与英雄区字体 */
-/* 158 */   .hero h1 { font-size: 1.5rem !important; }
-/* 159 */   .grid { grid-template-columns: 1fr !important; }
-/* 160 */ }
-
+/* 134 */   .logo img { height: 35px !important; margin-bottom: 10px !important; }
+/* 135 */   nav ul { 
+/* 136 */     display: flex !important; 
+/* 137 */     flex-wrap: wrap !important; 
+/* 138 */     justify-content: center !important; 
+/* 139 */     gap: 10px !important; 
+/* 140 */   }
+/* 141 */   nav ul li a { 
+/* 142 */     color: #ffffff !important; /* 回归白色文字 */
+/* 143 */     font-size: 14px !important; 
+/* 144 */     padding: 5px 10px !important; 
+/* 145 */   }
+/* 146 */   /* 确保内容区不会被页头遮挡 */
+/* 147 */   .section, .hero { padding-top: 20px !important; }
+/* 148 */ }
