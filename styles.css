@@ -31,20 +31,40 @@
 /* 31 */   0% { transform: translateX(0); }
 /* 32 */   100% { transform: translateX(calc(-400px * 6 - 120px)); } /* 滚动 6 张图的距离 */
 /* 33 */ }
-/* 34 */ /* --- 全站移动端自适应（包含导航、栅格及标题优化） --- */
-/* 35 */ @media (max-width: 768px) {
-/* 36 */   /* 导航栏：由左右横排变为上下叠放，解决文字溢出问题 */
-/* 37 */   header { flex-direction: column; height: auto; padding: 10px; }
-/* 38 */   nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; gap: 10px; }
-/* 39 */   
-/* 40 */   /* 首页大标题：减小字号，确保手机屏幕能完整显示 */
-/* 41 */   .hero h1 { font-size: 1.6rem; padding: 0 10px; }
-/* 42 */   .hero p { font-size: 0.9rem; }
-/* 43 */ 
-/* 44 */   /* 栅格布局：强制将所有页面的 3 列/4 列排版变为手机端的单列排版 */
-/* 45 */   .grid { grid-template-columns: 1fr !important; padding: 0 15px; }
-/* 46 */   
-/* 47 */   /* 仓库图片滚动区：调整高度和速度，适配小屏幕 */
-/* 48 */   .slide { width: 280px; height: 180px; }
-/* 49 */   .slider-track { animation-duration: 25s; }
-/* 50 */ }
+/* 125 */ /* --- 手机端导航消失故障定向修复 --- */
+/* 126 */ @media (max-width: 768px) {
+/* 127 */   /* 1. 强制重置页头高度，允许内容撑开 */
+/* 128 */   header { 
+/* 129 */     flex-direction: column !important; 
+/* 130 */     height: auto !important; 
+/* 131 */     padding: 10px 0 !important; 
+/* 132 */     min-height: 120px; 
+/* 133 */   }
+/* 134 */ 
+/* 135 */   /* 2. 缩小 LOGO 图片尺寸，防止遮挡 */
+/* 136 */   .logo img { 
+/* 137 */     height: 40px !important; /* 电脑端是60px，手机端降到40px */
+/* 138 */     width: auto; 
+/* 139 */   }
+/* 140 */ 
+/* 141 */   /* 3. 优化导航列表，确保文字可见并居中 */
+/* 142 */   nav ul { 
+/* 143 */     display: flex !important;
+/* 144 */     flex-wrap: wrap !important; 
+/* 145 */     justify-content: center !important; 
+/* 146 */     gap: 8px !important; 
+/* 147 */     margin: 10px 0 !important;
+/* 148 */     padding: 0 5px !important;
+/* 149 */   }
+/* 150 */ 
+/* 151 */   /* 4. 调整导航字体大小，适应小屏幕 */
+/* 152 */   nav ul li a { 
+/* 153 */     font-size: 14px !important; 
+/* 154 */     padding: 5px 8px !important; 
+/* 155 */   }
+/* 156 */ 
+/* 157 */   /* 5. 修复栅格与英雄区字体 */
+/* 158 */   .hero h1 { font-size: 1.5rem !important; }
+/* 159 */   .grid { grid-template-columns: 1fr !important; }
+/* 160 */ }
+
