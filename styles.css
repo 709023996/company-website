@@ -1,0 +1,33 @@
+/* 1 */ * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+/* 2 */ :root { --primary-yellow: #FFCD00; --dark-slate: #2B2B2B; --light-gray: #f4f4f4; --text-color: #333; }
+/* 3 */ body { line-height: 1.6; color: var(--text-color); background: #fff; }
+/* 4 */ header { background: var(--dark-slate); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 4px solid var(--primary-yellow); }
+/* 5 */ .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+/* 6 */ .logo span { color: var(--primary-yellow); }
+/* 7 */ nav ul { display: flex; list-style: none; }
+/* 8 */ nav ul li { margin-left: 20px; }
+/* 9 */ nav ul li a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+/* 10 */ nav ul li a:hover { color: var(--primary-yellow); }
+/* 11 */ .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1579975056154-20d93f284224?q=80&w=1600') center/cover; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; }
+/* 12 */ .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+/* 13 */ .btn { background: var(--primary-yellow); color: var(--dark-slate); padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; margin-top: 20px; border: none; cursor: pointer; }
+/* 14 */ .section { padding: 4rem 10%; }
+/* 15 */ .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+/* 16 */ .card { background: var(--light-gray); padding: 2rem; border-left: 5px solid var(--primary-yellow); transition: 0.3s; }
+/* 17 */ .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+/* 18 */ footer { background: var(--dark-slate); color: #ccc; padding: 3rem 10% 1rem; font-size: 0.9rem; }
+/* 19 */ .disclaimer { border-top: 1px solid #444; margin-top: 2rem; padding-top: 1rem; font-style: italic; color: #888; text-align: justify; }
+/* 20 */ @media (max-width: 768px) { nav ul { display: none; } .hero h1 { font-size: 2rem; } }
+/* 100 */ .logo span { color: var(--primary-yellow); }
+/* 101 */ 
+/* 102 */ /* --- 自动滚动区域样式 --- */
+/* 103 */ .slider-container { width: 100%; overflow: hidden; background: #222; padding: 20px 0; border-top: 2px solid var(--primary-yellow); border-bottom: 2px solid var(--primary-yellow); }
+/* 104 */ .slider-track { display: flex; width: calc(300px * 12); animation: scroll 40s linear infinite; }
+/* 105 */ .slider-track:hover { animation-play-state: paused; } /* 鼠标悬停时停止滚动 */
+/* 106 */ .slide { width: 400px; height: 250px; margin: 0 10px; flex-shrink: 0; }
+/* 107 */ .slide img { width: 100%; height: 100%; object-fit: cover; border: 1px solid #444; }
+/* 108 */ 
+/* 109 */ @keyframes scroll {
+/* 110 */   0% { transform: translateX(0); }
+/* 111 */   100% { transform: translateX(calc(-400px * 6 - 120px)); } /* 滚动 6 张图的距离 */
+/* 112 */ }
